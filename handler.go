@@ -7,16 +7,11 @@ import (
     "os"
 )
 
-func helloHandler(w http.ResponseWriter, r *http.Request) {
-    message := "This HTTP triggered function executed successfully. Pass a name in the query string for a personalized response.\n"
-    name := r.URL.Query().Get("name")
-    if name != "" {
-        message = fmt.Sprintf("Hello, %s. This HTTP triggered function executed successfully.\n", name)
-    }
+func retrieve_users(w http.ResponseWriter, r *http.Request) {
     // create a json object with fake user data containing name and occupation
     // and return it as a response
 
-    message = `{
+    message := `{
         "name": "John Doe",
         "occupation": "Software Engineer"
     }`
@@ -29,7 +24,7 @@ func main() {
     if val, ok := os.LookupEnv("FUNCTIONS_CUSTOMHANDLER_PORT"); ok {
         listenAddr = ":" + val
     }
-    http.HandleFunc("/api/products", helloHandler)
+    http.HandleFunc("/api/users", retrieve_users)
     log.Printf("About to listen on %s. Go to https://127.0.0.1%s/", listenAddr, listenAddr)
     log.Fatal(http.ListenAndServe(listenAddr, nil))
 }
