@@ -1,12 +1,8 @@
 type User {
-  name: string!
-  occupation: string
+  name: String!
+  occupation: String
 }
 
 type Query {
-  get_users: [User!]!
-}
-
-schema {
-  query: Query
+  users: [User!]!
 }
