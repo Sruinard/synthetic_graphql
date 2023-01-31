@@ -13,6 +13,14 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
     if name != "" {
         message = fmt.Sprintf("Hello, %s. This HTTP triggered function executed successfully.\n", name)
     }
+    // create a json object with fake user data containing name and occupation
+    // and return it as a response
+
+    message = `{
+        "name": "John Doe",
+        "occupation": "Software Engineer"
+    }`
+    w.Header().Set("Content-Type", "application/json")
     fmt.Fprint(w, message)
 }
 
