@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
     
 env:
-  AZURE_FUNCTIONAPP_NAME: csu-nl-sr-synthetic-graphql   # set this to your application's name
+  AZURE_FUNCTIONAPP_NAME: csu-nl-jvw-synthetic-graphql   # set this to your application's name
 
 jobs:
 
