@@ -12,7 +12,7 @@ func retrieve_users(w http.ResponseWriter, r *http.Request) {
 
     // create a json object with fake user data containing name and occupation
     // and return it as a response
-    message = `[
+    message := `[
         {
             "name": "John Doe",
             "occupation": "Software Engineer"
