@@ -1,0 +1,12 @@
+type User {
+  name: string!
+  occupation: string
+}
+
+type Query {
+  get_users: [User!]!
+}
+
+schema {
+  query: Query
+}

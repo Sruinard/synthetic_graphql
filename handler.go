@@ -8,13 +8,20 @@ import (
 )
 
 func retrieve_users(w http.ResponseWriter, r *http.Request) {
+
+
     // create a json object with fake user data containing name and occupation
     // and return it as a response
-
-    message := `{
-        "name": "John Doe",
-        "occupation": "Software Engineer"
-    }`
+    message = `[
+        {
+            "name": "John Doe",
+            "occupation": "Software Engineer"
+        },
+        {
+            "name": "Jane Doe",
+            "occupation": "Software Engineer"
+        }
+    ]`
     w.Header().Set("Content-Type", "application/json")
     fmt.Fprint(w, message)
 }
